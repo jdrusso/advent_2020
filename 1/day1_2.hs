@@ -12,7 +12,6 @@ double_sum list value =
             (x:xs) ->
                 if not $ isNothing $ sum_to_val xs (value - x)
                     then  Just $ concat [[x], fromJust (sum_to_val xs (value - x))]
-                    -- then Just [x]
                     else step xs value 
     in step list value
 
